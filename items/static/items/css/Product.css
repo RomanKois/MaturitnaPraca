@@ -1,0 +1,34 @@
+.product-wiew{
+    background-color: #f7f7f7;
+    margin-left: 200px;
+
+}
+@media(max-width: 600px){
+    .product-wiew{
+        margin-left: 0px;
+    }
+  }
+  
+.product{
+    margin: 40px;
+    
+}
+
+.img img{
+    width: 50%;
+    height: 60%;
+}
+.popis{
+    text-align: left;
+    display: block;
+    position: relative;
+    color: black;
+    margin-left: 20px ;
+ 
+}
+.cena{
+    display: block;
+    margin: 30px;
+    float: right;
+    text-align: right;
+}

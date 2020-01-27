@@ -1,0 +1,22 @@
+{% extends "items/home.html" %}
+{% load static %}
+
+
+ 
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'items/css/Product.css' %}">
+
+<div class="product-wiew">
+    <div class="product">
+        <h1>{{product.name}}</h1>
+        <p class="img"><img src= {{ product.image.url }}/></p>
+        <p class="popis"> {{product.descripton}}</p>
+        <h2 class="cena">{{product.price}} €</h2>
+
+
+    </div>
+</div>
+
+
+
+    {% endblock content %}
