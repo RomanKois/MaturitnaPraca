@@ -11,11 +11,13 @@
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>Chovateľské potreby</title>
     </head>
-    
+
         <body>  
                         <div class="top">
-                                <button class="submit" id="submit" type="submit">Vyhladaj</button>
-                                <input  class="search" id="site-search" name="q"aria-label="Vyhladaj">
+                                <form action="{% url 'searchResults' %}" method="get">
+                                        <button class="submit" id="submit" type="submit">Vyhľadaj</button>
+                                        <input  class="search" id="site-search" name="q"aria-label="Vyhladaj">
+                                </form>
                                 <button class="link" onclick="window.location.href='/kontakt'">Kontakt</button>
                                 <button class="link" onclick="window.location.href='/ '">Domov</button>
                                 <div class="responzivita" id="responzivita">

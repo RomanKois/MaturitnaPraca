@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView
 from items.models import Category, Product
+from django.db.models import Q
 
 
 def home(request):
@@ -38,6 +39,41 @@ def kontakt(request):
     categories = Category.objects.all()
     context['category'] = categories
     return render(request, 'items/kontakt.html', context)
+
+def hladaj(request):
+    querry = request.GET.get('q')
+    categories = Category.objects.all()
+    context = {
+        "category": categories
+    }
+
+    if len(querry) != 0:
+        queryset = getQuery(querry)
+        if len(queryset) != 0:
+            context['products'] = queryset
+        else:
+            context['nores'] = "Not find product: " + str(querry)
+            context['products'] = []
+    else:
+        context['nores'] = "Empty search"
+        context['products'] = []
+
+
+
+    return render(request, 'items/search.html', context)
+
+
+def getQuery(keyword):
+    queryset = None
+    queries = keyword.split(" ")
+    for q in queries:
+        products = Product.objects.filter(
+            Q(name__icontains=q)
+        ).distinct()
+
+        queryset = [p for p in products]
+
+    return list(set(queryset))
 
 
 
