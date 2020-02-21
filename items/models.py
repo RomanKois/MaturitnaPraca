@@ -20,7 +20,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, related_name='Under', on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name='Product', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
     url = models.SlugField(db_index=True, unique= True, blank=True, null=True)
     image = models.ImageField(upload_to='products/products', blank=True)

@@ -15,18 +15,20 @@
 }
 
 .img img{
-    width: 50%;
-    height: 60%;
+    width: 450px;
+    height: 495px;
+    display: inline-block;
 }
 .popis{
     text-align: left;
-    display: block;
+    display: inline-block;
     position: relative;
     color: black;
     margin-left: 20px ;
  
 }
 .cena{
+    text-align: left;
     display: block;
     margin: 30px;
     float: right;

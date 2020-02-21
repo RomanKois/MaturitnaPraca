@@ -4,4 +4,33 @@
 
 
         {% block content %}
+        <link rel="stylesheet" type="text/css" href="{% static 'items/css/kontakt.css' %}">
+        <script src="{% static 'items/js/kontakt.js' %}"></script>
+        <div class="info-container">
+
+           
+                  
+                  
+                      <div id="map"></div>
+            
+                        
+                      </script>
+                      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgvSiZ99N-MnOpGbtqJLbAm0w2w6XPZ-c&callback=initMap"
+                      async defer></script>
+                      <div id="info">
+                            <h5 id="h5">Prevádzka:</h5>
+                            <h6 id="h6">Beáta Koišová</h6>
+                            <h6 id="h6">900 50 Kráľová pri Senci 179</h6>
+                            <h6 id="h6">IČO: 42362806</h6>
+                            <h6 id="h6">DIČ: 1935529715</h6>
+                            
+                                
+                        <h5 id="h5">Sídlo:</h5>
+                        <h6 id="h6">Beáta Koišová</h6>
+                        <h6 id="h6">900 50 Kráľová pri Senci 201</h6>
+                        <h6 id="h6">IČO: 42362806</h6>
+                        <h6 id="h6">DIČ: 1935529715</h6>
+                      </div>
+        </div>
+
         {% endblock content %}

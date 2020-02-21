@@ -52,10 +52,10 @@ def hladaj(request):
         if len(queryset) != 0:
             context['products'] = queryset
         else:
-            context['nores'] = "Not find product: " + str(querry)
+            context['nores'] = "Produkt: " + str(querry) + " nenájdený"
             context['products'] = []
     else:
-        context['nores'] = "Empty search"
+        context['nores'] = "Prázdne hľadanie"
         context['products'] = []
 
 
