@@ -3,29 +3,32 @@ from django.http import HttpResponse
 from django.views.generic.edit import CreateView
 from items.models import Category, Product
 from django.db.models import Q
-
+import operator
+import random
 
 def home(request):
     context = {}
-    categories = Category.objects.all()
-    products = Product.objects.all()
+    categories = Category.objects.all().order_by("name")
+    products = Product.objects.all().filter(available = True)
     context['category'] = categories
+    random_product= random.sample(list(products), 5)
+    context['random'] = random_product
     context['products'] = products
-    return render(request, 'items/home.html', context)
+    return render(request, 'items/MainPage.html', context)
 
 
 
 def category(request, category):    
     cat = Category.objects.get(url=category)
     categories = Category.objects.all()
-    products = Product.objects.filter(category=cat) 
+    products_ordered = Product.objects.filter(category=cat, available = True).order_by("name")
     context = {}
     context['category'] = categories
-    context['products'] = products
+    context['products'] = products_ordered
     return render(request, 'items/Category.html', context)
 
 def product(request, category, product):
-    categories = Category.objects.all()
+    categories = Category.objects.all().order_by("name")
     product = Product.objects.get(url=product)
     context = {}
     context['category'] = categories
@@ -36,13 +39,13 @@ def product(request, category, product):
 
 def kontakt(request):
     context = {}
-    categories = Category.objects.all()
+    categories = Category.objects.all().order_by("name")
     context['category'] = categories
     return render(request, 'items/kontakt.html', context)
 
 def hladaj(request):
     querry = request.GET.get('q')
-    categories = Category.objects.all()
+    categories = Category.objects.all().order_by("name")
     context = {
         "category": categories
     }
@@ -74,6 +77,11 @@ def getQuery(keyword):
         queryset = [p for p in products]
 
     return list(set(queryset))
+
+
+
+
+ 
 
 
 

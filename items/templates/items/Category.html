@@ -11,14 +11,24 @@
 
 
     <div class="wholeContainer" id ="wholeContainer">
+
         {% for product in products %}
      
     
         <div class="products-container" id="products-container">
+            <input type="hidden" name="product-stock" id="product-stock" class="product-stock" value="{{product.stock}}">
             <input type="hidden" name="product-url" id="product-url" value="{{product.url}}">
             <p class="img"><img src= {{ product.image.url }}/></p>
             <h2 class="title">{{product.name}}</h2>
             <h2 class="cena">{{product.price}} €</h2>
+            <div class="bottom-info">
+                <h3 class="stock" id="stock">Na sklade</h3>
+                <form action="{% url 'update_cart' product.url 1 %}">
+                    <button class="vlozit"> Vlož do košíka</button>
+                </form>  
+            </div>
+            
+                
         </div>
 
 

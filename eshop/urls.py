@@ -24,10 +24,14 @@ from items.views import kontakt
 from items.views import category
 from items.views import home
 from items.views import product
+from kosik.views import update_cart
+from kosik.views import kosik_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
+    path('cart/', kosik_view, name='kosik'),
+    path('cart/<slug:url>/<int:qty>/', update_cart, name ='update_cart'),
     path('category/', include('items.urls')),
     path('kontakt/', kontakt, name='kontakt' ),
     

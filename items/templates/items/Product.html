@@ -5,14 +5,21 @@
  
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'items/css/Product.css' %}">
+<script src="{% static 'items/js/product.js' %}"></script>
 
 <div class="product-wiew">
     <div class="product">
+        <input type="hidden" name="product-stock" id="product-stock" value="{{product.stock}}">
         <h1>{{product.name}}</h1>
         <p class="img"><img src= {{ product.image.url }}/></p>
         <p class="popis"> {{product.descripton}}</p>
-        <h2 class="cena">{{product.price}} €</h2>
+        <div class="cena-conatiner">    
+            <h2 class="cena">{{product.price}} €</h2>
+            <h2 class="stock" id="stock">Na sklade</h2>
+            <button class="vlozit" onclick="window.location.href" = '{% url "update_cart" product.url %}'> Vlož do košíka</button>
 
+        </div>
+            
 
     </div>
 </div>

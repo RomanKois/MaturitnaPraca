@@ -11,23 +11,27 @@
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>Chovateľské potreby</title>
     </head>
-
-        <body>  
-                        <div class="top">
+    <body>  
+            <div class="top">
+                    <div class="kosik">
+                </div>
+                                
+                                                               
                                 <form action="{% url 'searchResults' %}" method="get">
                                         <button class="submit" id="submit" type="submit">Vyhľadaj</button>
                                         <input  class="search" id="site-search" name="q"aria-label="Vyhladaj">
                                 </form>
+                                <!-- <button class="link" onclick="window.location.href='/cart'">Košík <span class="badge"> {{ request.session.SUM}}</span></button> -->
                                 <button class="link" onclick="window.location.href='/kontakt'">O nás</button>
                                 <button class="link" onclick="window.location.href='/ '">Domov</button>
                                 <div class="logo">
                                         <img  src="/static/items/css/logo.png" alt="">
                                 </div>
                                 <div class="responzivita" id="responzivita">
-                                <img src="/static/items/css/menu.png" alt="">
-                        </div>
+                                        <img src="/static/items/css/menu.png" alt="">
+                                </div>
                                 
-
+                                
 
                         </div>
                 

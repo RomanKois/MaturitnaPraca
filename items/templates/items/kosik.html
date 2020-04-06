@@ -1,0 +1,36 @@
+{% extends "items/home.html" %}
+{% load static %}
+
+
+ 
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'items/css/kosik.css' %}">
+
+{% if empty %}
+    <h1 class="empty">Košík je prázdny</h1>
+{% else %}
+    
+    <h1>{{ cart.total }}</h1>
+    <table class="table">
+        <thead>
+            <th>Produkt</th>
+            <th>Cena</th>
+        </thead>
+        {% for item in cart %}
+        <h1>aaaano</h1>
+        <tr><td class="name">{{item.name}}</td><td>{{item.price}}</td><td><form action="url 'update_cart' product.url 0"></form><button class="remove">Odstrániť</button></td></tr>
+            
+            {% endfor %}
+            
+            <tfoot>
+                <td></td>
+                <td>Cena Celkom: {{ cart.total }}</td>
+            </tfoot>
+        
+    </table>
+    
+</div>
+     <button class="continue">Ďalej</button>
+{% endif %}
+    
+    {% endblock content %}

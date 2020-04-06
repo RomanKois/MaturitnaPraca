@@ -1,0 +1,43 @@
+.wholeContainer{
+    margin-left: 200px;
+    text-align: center;
+}
+#h1{
+    text-align: center;
+}
+
+.products-container {
+    background-color: #ffffff;
+    width: 300px;
+    height: 500px;
+    display: inline-table;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+.products-container:hover{
+    box-shadow: 0px 0px 10px #4e4e4e;
+    cursor: pointer;
+} 
+
+.img img    {
+    width: 300px;
+    height: 330px;
+
+}
+
+.title{
+    height: 50px;
+    margin-left: 10px;
+}
+
+.cena{
+    text-align: right;
+    margin: 10px;
+}
+.stock{
+    color: #15d649;
+    text-align: right;
+    margin-right: 10px;
+}

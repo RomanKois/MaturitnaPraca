@@ -27,10 +27,19 @@
     margin-left: 20px ;
  
 }
-.cena{
-    text-align: left;
-    display: block;
-    margin: 30px;
-    float: right;
+.cena-conatiner{
+    margin-right: 30px;
     text-align: right;
+    display: block;
+}
+.cena{
+    margin: 0 auto;
+    text-align: right;
+    display: block;
+}
+
+.stock{
+    margin: 0 auto;
+    display: block;
+    color: #15d649;
 }
