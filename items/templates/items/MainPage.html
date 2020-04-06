@@ -20,6 +20,9 @@
         <h2 class="title">{{product.name}}</h2>
         <h2 class="cena">{{product.price}} €</h2>
         <h3 class="stock" id="stock">Na sklade</h3>
+        <form action="{% url 'addToCart' product.url %}" method="get">
+            <button class="vlozit"> Vlož do košíka</button>
+        </form>
     </div>
     {% endfor %}
 </div>

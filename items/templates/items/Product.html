@@ -16,10 +16,12 @@
         <div class="cena-conatiner">    
             <h2 class="cena">{{product.price}} €</h2>
             <h2 class="stock" id="stock">Na sklade</h2>
-            <button class="vlozit" onclick="window.location.href" = '{% url "update_cart" product.url %}'> Vlož do košíka</button>
+            <form action="{% url 'addToCart' product.url %}" method="get">
+                <input type="hidden" name="next" value="{{ request.path }}">
+                <button class="vlozit"> Vlož do košíka</button>
+            </form>
 
         </div>
-            
 
     </div>
 </div>

@@ -1,10 +1,9 @@
-from django.urls import path
+from django.urls import path, include
 from .views import (
     product,
     kontakt,
     category,
     hladaj,
- 
 )
 
 urlpatterns = [ 

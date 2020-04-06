@@ -38,7 +38,7 @@
     width: auto;
 }
 
-.cena{
+/* .cena{
     position: relative;
     width: auto;
     text-align: right;
@@ -59,9 +59,9 @@
 
     
     
-}
+} */
 
-.vlozit{
+/* .vlozit{
     background-color:#15d649;
     margin-bottom: 10px;
     margin-left: 20px;
@@ -78,4 +78,4 @@
 .vlozit:hover{
     background-color:green;
     cursor: pointer;
-}
+} */

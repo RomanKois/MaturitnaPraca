@@ -14,6 +14,7 @@ def home(request):
     random_product= random.sample(list(products), 5)
     context['random'] = random_product
     context['products'] = products
+    context['itemCount'] = getItemCount(request)
     return render(request, 'items/MainPage.html', context)
 
 
@@ -25,6 +26,7 @@ def category(request, category):
     context = {}
     context['category'] = categories
     context['products'] = products_ordered
+    context['itemCount'] = getItemCount(request)
     return render(request, 'items/Category.html', context)
 
 def product(request, category, product):
@@ -33,6 +35,7 @@ def product(request, category, product):
     context = {}
     context['category'] = categories
     context['product'] = product
+    context['itemCount'] = getItemCount(request)
     return render(request, 'items/Product.html', context)
 
 
@@ -41,6 +44,7 @@ def kontakt(request):
     context = {}
     categories = Category.objects.all().order_by("name")
     context['category'] = categories
+    context['itemCount'] = getItemCount(request)
     return render(request, 'items/kontakt.html', context)
 
 def hladaj(request):
@@ -61,8 +65,7 @@ def hladaj(request):
         context['nores'] = "Prázdne hľadanie"
         context['products'] = []
 
-
-
+    context['itemCount'] = getItemCount(request)
     return render(request, 'items/search.html', context)
 
 
@@ -79,11 +82,12 @@ def getQuery(keyword):
     return list(set(queryset))
 
 
+# Toto nie je veiw FYI the request parameter is just a coinsidence
+def getItemCount(request):
+    count = None
+    try:
+        count = len(request.session['kosik'])
+    except KeyError:
+        count = 0
 
-
- 
-
-
-
-
-    
+    return count
