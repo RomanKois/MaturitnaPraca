@@ -1,15 +1,14 @@
-
 document.addEventListener("DOMContentLoaded", functionLoaded); 
 
 function functionLoaded(){
     
-    buttonElement = document.getElementById("responzivita").addEventListener("click", otvorenie);
-        function otvorenie() {
-            tab = document.getElementById("tab").style.display = "block";
-            productContainer = document.getElementById("wholeContainer").style.marginLeft = "200px";
-             }
-
-
+    document.getElementById("responzivita").addEventListener("click", function() {
+        if (document.getElementById("tab").style.display === "block") {
+            document.getElementById("tab").style.display = null;
+        } else {
+            document.getElementById("tab").style.display = "block";
+        }
+    });
 }
     
 
